@@ -63,7 +63,7 @@
   }
   
   .header {
-    background-color: #f44336;
+    background-color: #ffd986;
     padding: 30px 40px;
     color: white;
     text-align: center;
@@ -88,7 +88,7 @@
   .addBtn {
     padding: 10px;
     width: 25%;
-    background: #d9d9d9;
+    background: #3ab378;
     color: #555;
     float: left;
     text-align: center;
@@ -99,5 +99,5 @@
   }
   
   .addBtn:hover {
-    background-color: #bbb;
+    background-color: #3ab378;
   }
