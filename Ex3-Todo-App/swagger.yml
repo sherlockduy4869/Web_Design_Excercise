@@ -2,6 +2,9 @@ openapi: 3.0.0
 info:
   title: Todo APP
   version: 1.0.0
+  description: This is a Todo App for Web development excercise
+servers:
+  - url: https://eb12f861-97fb-4590-b42f-d8a6cb9178d9.mock.pstmn.io
 paths:
   /tasks:
     get:
