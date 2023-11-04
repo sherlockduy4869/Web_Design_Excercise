@@ -1,11 +1,21 @@
-import "./accordionStyle.css";
+import './AccordionStyle.css'
+import { useState } from "react";
 
-const accordion = () => {
+const Acc1 = () => {
+  const [display1, setDisplay1] = useState(false);
+  const [display2, setDisplay2] = useState(false);
+  const [display3, setDisplay3] = useState(false);
+
   return (
     <div>
       <h2>Accordion with symbols</h2>
-      <button class="accordion">Section 1</button>
-      <div class="panel">
+      <button 
+      onClick={() => setDisplay1(!display1)}
+      className="accordion">Section 1</button>
+      <div
+        style={display1 ? { maxHeight: 100 } : { maxHeight: 0 }}
+        className="panel"
+      >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -14,8 +24,12 @@ const accordion = () => {
         </p>
       </div>
 
-      <button class="accordion">Section 2</button>
-      <div class="panel">
+      <button 
+      onClick={() => setDisplay2(!display2)}
+      className="accordion">Section 2</button>
+      <div 
+      style={display2 ? { maxHeight: 100 } : { maxHeight: 0 }}
+      className="panel">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -24,8 +38,12 @@ const accordion = () => {
         </p>
       </div>
 
-      <button class="accordion">Section 3</button>
-      <div class="panel">
+      <button 
+      onClick={() => setDisplay3(!display3)}
+      className="accordion">Section 3</button>
+      <div 
+      style={display3 ? { maxHeight: 100 } : { maxHeight: 0 }}
+      className="panel">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -37,4 +55,4 @@ const accordion = () => {
   );
 };
 
-export default accordion;
+export default Acc1;

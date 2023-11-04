@@ -1,10 +1,10 @@
-import Show from './components/Show/show.jsx'
+import Req3 from './components/Show/Req3'
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Show/>
+      <Req3/>
     </div>
   );
 }
