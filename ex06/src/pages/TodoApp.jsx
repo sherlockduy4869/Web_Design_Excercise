@@ -36,6 +36,7 @@ const TodoApp = () => {
     const init = async () => {
       try {
         const listTask = await fetchTask();
+        
         setListTask(listTask);
       } catch (error) {
         console.log(error);
