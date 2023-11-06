@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://d2f630f5-66c8-45a2-aadc-19ccae7e1145.mock.pstmn.io'
+    baseURL: 'https://618a95c1-959f-4c26-8e00-b85f70d7eb2b.mock.pstmn.io'
 })
 
 export default instance;

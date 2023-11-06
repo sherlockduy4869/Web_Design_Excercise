@@ -11,24 +11,29 @@ import { useState, useEffect } from "react";
 const TodoApp = () => {
   const [newTaskInfo, setNewTaskInfo] = useState("");
   const [listTask, setListTask] = useState([]);
+  const [isReload, setIsReload] = useState(false);
+
   const handleAddnewTask = async () => {
     const result = await addNewTask(newTaskInfo);
     console.log(result);
   };
 
-  const handleChangeStatusTask = async (taskName, status, index) => {
+  const handleChangeStatusTask = async (taskName, status) => {
     if (status === "DONE") {
       const result = await marNotDoneTask(taskName, "NOT_DONE");
+      setIsReload(!isReload);
       console.log(result);
     }
     if (status === "NOT_DONE") {
       const result = await markDoneTask(taskName, "DONE");
+      setIsReload(!isReload);
       console.log(result);
     }
   };
 
   const handleDeleteTask = async (taskName) => {
     const result = await deleteTask(taskName, "DELETED");
+    setIsReload(!isReload);
     console.log(result);
   };
 
@@ -43,7 +48,7 @@ const TodoApp = () => {
       }
     };
     init();
-  }, []);
+  }, [isReload]);
 
   return (
     <div>
@@ -64,15 +69,17 @@ const TodoApp = () => {
       </div>
 
       <ul id="myUL">
-        {listTask.map((task, index) => (
+        {listTask.map((key, index) => (
           <li
-            onClick={() => handleChangeStatusTask(task.taskName, task.status)}
-            style={{ display: task.status === "DELETED" ? "none" : "true" }}
-            className={task.status === "DONE" ? "checked" : ""}
+            key={index}
+            onClick={() => handleChangeStatusTask(key.taskName, key.status)}
+            style={{ display: key.status === "DELETED" ? "none" : "true" }}
+            className={key.status === "DONE" ? "checked" : ""}
           >
-            {task.taskName}
+            {key.taskName}
             <span
-              onClick={() => handleDeleteTask(task.taskName)}
+              key={index}
+              onClick={() => handleDeleteTask(key.taskName)}
               className="close"
             >
               X
