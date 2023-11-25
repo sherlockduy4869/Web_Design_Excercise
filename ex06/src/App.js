@@ -1,9 +1,15 @@
-import TodoApp from "./pages/TodoApp";
+import { TodoApp, Login } from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <TodoApp/>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<TodoApp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
